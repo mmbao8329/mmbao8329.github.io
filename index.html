@@ -3,162 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naoki - Dịch Vụ Minecraft Server</title>
+    <title>Naoki | Premium Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Cài đặt màu sắc chủ đạo - Tông lạnh */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
         :root {
-            --bg-color: #0b1120; /* Nền xanh đen tối mờ */
-            --card-bg: #172554; /* Nền các ô chứa nội dung (xanh navy) */
-            --primary-cyan: #00f6ff; /* Màu xanh ngọc neon làm điểm nhấn */
-            --text-main: #f8fafc; /* Chữ màu trắng sáng */
-            --text-muted: #94a3b8; /* Chữ màu xám xanh cho mô tả */
+            --bg-dark: #050b14;
+            --primary-cyan: #00e5ff;
+            --glass-bg: rgba(16, 33, 65, 0.4);
+            --glass-border: rgba(0, 229, 255, 0.2);
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
         }
 
         body {
-            background-color: var(--bg-color);
+            background: radial-gradient(circle at 50% 0%, #0d1b2a 0%, var(--bg-dark) 80%);
             color: var(--text-main);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 20px;
-            line-height: 1.7;
+            padding: 40px 20px;
+            min-height: 100vh;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 700px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        /* Phần giới thiệu (Header) */
+        /* Hiệu ứng Kính mờ (Glassmorphism) */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Header / Giới thiệu */
         .header {
             text-align: center;
-            padding: 30px 20px;
-            background: linear-gradient(180deg, rgba(23,37,84,0.8) 0%, rgba(11,17,32,0) 100%);
-            border-top: 3px solid var(--primary-cyan);
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 -5px 20px rgba(0, 246, 255, 0.1);
+            padding: 40px 20px;
         }
 
         .header h1 {
-            color: var(--primary-cyan);
-            font-size: 1.8em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(0, 246, 255, 0.4);
-            margin-bottom: 5px;
-        }
-
-        .header h2 {
-            font-size: 1.4em;
-            margin-top: 0;
+            font-size: 2.5em;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(90deg, #fff, var(--primary-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
         }
 
         .header p {
-            color: var(--text-muted);
-            font-size: 1.05em;
+            color: var(--text-sub);
+            font-size: 1.1em;
+            margin-top: 10px;
         }
 
-        /* Tiêu đề các mục */
         .section-title {
-            color: var(--primary-cyan);
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-top: 35px;
-            font-size: 1.3em;
-            border-bottom: 1px solid #1e3a8a;
-            padding-bottom: 10px;
         }
 
-        /* Khối chứa nội dung (Card) */
-        .card {
-            background-color: var(--card-bg);
-            border-left: 4px solid var(--primary-cyan);
-            padding: 20px;
-            margin-top: 15px;
-            border-radius: 0 8px 8px 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        .section-title i {
+            color: var(--primary-cyan);
         }
 
-        /* Danh sách */
-        ul {
-            list-style-type: none;
-            padding-left: 0;
+        /* Lưới Dịch vụ (Grid) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 10px 20px rgba(0, 229, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .service-icon {
+            font-size: 2em;
+            color: var(--primary-cyan);
+            margin-bottom: 15px;
+        }
+
+        .service-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .service-desc {
+            font-size: 0.9em;
+            color: var(--text-sub);
+            margin-bottom: 15px;
+        }
+
+        .service-price {
+            display: inline-block;
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--primary-cyan);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        /* Danh sách Policy */
+        .policy-list {
+            list-style: none;
+            padding: 0;
             margin: 0;
         }
 
-        ul li {
+        .policy-list li {
             position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            color: #cbd5e1;
         }
 
-        ul li::before {
-            content: "▹";
-            color: var(--primary-cyan);
+        .policy-list li i {
             position: absolute;
             left: 0;
-            font-weight: bold;
-            font-size: 1.2em;
+            top: 4px;
+            color: var(--primary-cyan);
         }
 
-        .highlight {
-            color: #38bdf8;
-            font-weight: bold;
+        .highlight-red {
+            color: #ff4757;
+            font-weight: 600;
         }
 
-        /* Nút nhấn nhá phần hoàn tiền */
-        .refund-title {
-            color: #fca5a5; /* Đỏ nhạt để cảnh báo nhẹ */
-            margin-top: 20px;
-            margin-bottom: 10px;
+        /* Nút Liên Hệ */
+        .contact-btn {
+            display: block;
+            width: fit-content;
+            margin: 40px auto 0;
+            padding: 15px 40px;
+            background: transparent;
+            color: var(--primary-cyan);
+            border: 2px solid var(--primary-cyan);
+            border-radius: 30px;
             font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+        }
+
+        .contact-btn:hover {
+            background: var(--primary-cyan);
+            color: #000;
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🎮 Dịch Vụ Minecraft Server</h1>
-            <h2>👋 Xin chào! Mình là Naoki</h2>
-            <p>🔥 Chuyên làm các dịch vụ về Minecraft Server, ưu tiên chất lượng – uy tín – đúng yêu cầu.</p>
+        
+        <div class="glass-panel header">
+            <h1>NAOKI SERVICES</h1>
+            <p>Hệ Thống Chuyên Nghiệp - Tối Ưu Hiệu Suất - Vận Hành Mượt Mà</p>
         </div>
 
-        <h3 class="section-title">🛠 CÁC DỊCH VỤ</h3>
-        <div class="card">
-            <ul>
-                <li>Setup Minecraft Server</li>
-                <li>Code plugin custom theo yêu cầu</li>
-                <li>Chỉnh config chi tiết theo nhu cầu server</li>
+        <div class="glass-panel">
+            <div class="section-title"><i class="fas fa-layer-group"></i> CÁC GÓI DỊCH VỤ</div>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-server"></i></div>
+                    <div class="service-title">Setup Minecraft Server</div>
+                    <div class="service-desc">Xây dựng server theo chế độ tùy chọn (Survival, RPG, Skyblock...). Tối ưu hóa cấu trúc file, giảm lag và cấu hình các plugin nền tảng.</div>
+                    <div class="service-price">Liên hệ báo giá</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <div class="service-title">Config & Việt Hóa</div>
+                    <div class="service-desc">Thiết lập chi tiết quyền hạn hệ thống (LuckPerms, EssentialsX), cấu hình Shop GUI, và việt hóa các file .yml chuẩn xác.</div>
+                    <div class="service-price">Từ 50.000đ</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-robot"></i></div>
+                    <div class="service-title">Lập Trình Bot Hệ Thống</div>
+                    <div class="service-desc">Viết Bot Discord quản lý server, bot phát nhạc, hoặc thiết lập kịch bản Messenger Bot tự động trả lời cho fanpage.</div>
+                    <div class="service-price">Từ 100.000đ</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-terminal"></i></div>
+                    <div class="service-title">Code Plugin / Script</div>
+                    <div class="service-desc">Viết script tính năng custom theo kịch bản riêng của bạn. Sửa lỗi (debug) hệ thống đang chạy.</div>
+                    <div class="service-price">Theo độ khó</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="glass-panel">
+            <div class="section-title"><i class="fas fa-shield-alt"></i> CAM KẾT & CHÍNH SÁCH BẢO HÀNH</div>
+            <ul class="policy-list">
+                <li><i class="fas fa-check-circle"></i> <strong>Tiến độ:</strong> Làm đúng yêu cầu thỏa thuận ban đầu, không bỏ dở giữa chừng (trừ trường hợp bất khả kháng sẽ báo trước).</li>
+                <li><i class="fas fa-clock"></i> <strong>Hỗ trợ:</strong> Sau khi bàn giao, bạn có <strong>48 giờ</strong> để test và báo lỗi. Mình sẽ fix hoàn toàn miễn phí các lỗi nằm trong phạm vi công việc.</li>
+                <li><i class="fas fa-money-bill-wave"></i> <strong>Hoàn tiền 70%:</strong> Hoặc đổi sang dịch vụ tương đương nếu lỗi xuất phát từ phía mình và không thể khắc phục được.</li>
+                <li><i class="fas fa-exclamation-triangle highlight-red"></i> <strong>Lưu ý:</strong> Khách tự ý bỏ đơn giữa chừng hoàn 50%. Các tính năng phát sinh thêm ngoài kịch bản chốt ban đầu sẽ tính thêm phụ phí.</li>
             </ul>
         </div>
 
-        <h3 class="section-title">✅ CAM KẾT</h3>
-        <div class="card">
-            <ul>
-                <li>Làm đến khi khách hàng ưng ý</li>
-                <li>Fix các lỗi phát sinh trong quá trình thực hiện đơn hàng</li>
-                <li>Làm đúng yêu cầu, không bỏ giữa chừng <span class="highlight">(trừ trường hợp đặc biệt, sẽ báo trước)</span></li>
-            </ul>
-        </div>
+        <a href="#" class="contact-btn">
+            <i class="fab fa-facebook-messenger"></i> LIÊN HỆ NGAY
+        </a>
 
-        <h3 class="section-title">⚠️ LƯU Ý & CHÍNH SÁCH</h3>
-        <div class="card">
-            <ul>
-                <li>Thời gian hoàn thành tuỳ thuộc vào độ khó và phạm vi công việc.</li>
-                <li>Sau khi bàn giao, khách có <strong>48h</strong> để kiểm tra và phản hồi lỗi để được hỗ trợ.</li>
-                <li>Các yêu cầu ngoài thoả thuận ban đầu sẽ thu thêm phụ phí (báo trước).</li>
-                <li>Thanh toán theo thoả thuận, có thể trả góp theo giai đoạn.</li>
-                <li>Có thể yêu cầu cọc trước tuỳ độ phức tạp.</li>
-            </ul>
-
-            <div class="refund-title">🔄 Chính sách hoàn tiền:</div>
-            <ul>
-                <li>Hoàn <strong>70%</strong> hoặc đổi sang dịch vụ/sản phẩm khác cùng giá trị nếu gặp lỗi từ phía mình và không thể khắc phục.</li>
-                <li>Hoàn <strong>50%</strong> nếu khách bỏ đơn giữa chừng trong quá trình làm việc (có thể thay đổi theo tiến độ công việc).</li>
-                <li><strong>Không hoàn tiền</strong> nếu công việc đã hoàn thành đúng yêu cầu và khách không phản hồi lỗi trong vòng 48h sau bàn giao.</li>
-            </ul>
-        </div>
     </div>
 </body>
 </html>
