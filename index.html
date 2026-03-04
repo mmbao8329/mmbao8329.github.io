@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naoki - Dịch Vụ Minecraft Server</title>
+    <style>
+        /* Cài đặt màu sắc chủ đạo - Tông lạnh */
+        :root {
+            --bg-color: #0b1120; /* Nền xanh đen tối mờ */
+            --card-bg: #172554; /* Nền các ô chứa nội dung (xanh navy) */
+            --primary-cyan: #00f6ff; /* Màu xanh ngọc neon làm điểm nhấn */
+            --text-main: #f8fafc; /* Chữ màu trắng sáng */
+            --text-muted: #94a3b8; /* Chữ màu xám xanh cho mô tả */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Phần giới thiệu (Header) */
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(180deg, rgba(23,37,84,0.8) 0%, rgba(11,17,32,0) 100%);
+            border-top: 3px solid var(--primary-cyan);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 -5px 20px rgba(0, 246, 255, 0.1);
+        }
+
+        .header h1 {
+            color: var(--primary-cyan);
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 246, 255, 0.4);
+            margin-bottom: 5px;
+        }
+
+        .header h2 {
+            font-size: 1.4em;
+            margin-top: 0;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 1.05em;
+        }
+
+        /* Tiêu đề các mục */
+        .section-title {
+            color: var(--primary-cyan);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 35px;
+            font-size: 1.3em;
+            border-bottom: 1px solid #1e3a8a;
+            padding-bottom: 10px;
+        }
+
+        /* Khối chứa nội dung (Card) */
+        .card {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--primary-cyan);
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Danh sách */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        ul li::before {
+            content: "▹";
+            color: var(--primary-cyan);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .highlight {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        /* Nút nhấn nhá phần hoàn tiền */
+        .refund-title {
+            color: #fca5a5; /* Đỏ nhạt để cảnh báo nhẹ */
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Dịch Vụ Minecraft Server</h1>
+            <h2>👋 Xin chào! Mình là Naoki</h2>
+            <p>🔥 Chuyên làm các dịch vụ về Minecraft Server, ưu tiên chất lượng – uy tín – đúng yêu cầu.</p>
+        </div>
+
+        <h3 class="section-title">🛠 CÁC DỊCH VỤ</h3>
+        <div class="card">
+            <ul>
+                <li>Setup Minecraft Server</li>
+                <li>Code plugin custom theo yêu cầu</li>
+                <li>Chỉnh config chi tiết theo nhu cầu server</li>
+            </ul>
+        </div>
+
+        <h3 class="section-title">✅ CAM KẾT</h3>
+        <div class="card">
+            <ul>
+                <li>Làm đến khi khách hàng ưng ý</li>
+                <li>Fix các lỗi phát sinh trong quá trình thực hiện đơn hàng</li>
+                <li>Làm đúng yêu cầu, không bỏ giữa chừng <span class="highlight">(trừ trường hợp đặc biệt, sẽ báo trước)</span></li>
+            </ul>
+        </div>
+
+        <h3 class="section-title">⚠️ LƯU Ý & CHÍNH SÁCH</h3>
+        <div class="card">
+            <ul>
+                <li>Thời gian hoàn thành tuỳ thuộc vào độ khó và phạm vi công việc.</li>
+                <li>Sau khi bàn giao, khách có <strong>48h</strong> để kiểm tra và phản hồi lỗi để được hỗ trợ.</li>
+                <li>Các yêu cầu ngoài thoả thuận ban đầu sẽ thu thêm phụ phí (báo trước).</li>
+                <li>Thanh toán theo thoả thuận, có thể trả góp theo giai đoạn.</li>
+                <li>Có thể yêu cầu cọc trước tuỳ độ phức tạp.</li>
+            </ul>
+
+            <div class="refund-title">🔄 Chính sách hoàn tiền:</div>
+            <ul>
+                <li>Hoàn <strong>70%</strong> hoặc đổi sang dịch vụ/sản phẩm khác cùng giá trị nếu gặp lỗi từ phía mình và không thể khắc phục.</li>
+                <li>Hoàn <strong>50%</strong> nếu khách bỏ đơn giữa chừng trong quá trình làm việc (có thể thay đổi theo tiến độ công việc).</li>
+                <li><strong>Không hoàn tiền</strong> nếu công việc đã hoàn thành đúng yêu cầu và khách không phản hồi lỗi trong vòng 48h sau bàn giao.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
