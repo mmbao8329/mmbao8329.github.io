@@ -160,30 +160,67 @@
             font-weight: 600;
         }
 
-        /* Nút Liên Hệ */
+        /* Container chứa các nút liên hệ */
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Nút Liên Hệ chung */
         .contact-btn {
-            display: block;
-            width: fit-content;
-            margin: 40px auto 0;
-            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
             background: transparent;
-            color: var(--primary-cyan);
-            border: 2px solid var(--primary-cyan);
             border-radius: 30px;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 600;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+            border: 2px solid;
         }
 
+        /* Hiệu ứng khi lướt qua nút */
         .contact-btn:hover {
-            background: var(--primary-cyan);
-            color: #000;
-            box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
             transform: scale(1.05);
+            color: #fff !important;
+        }
+
+        /* Màu sắc riêng cho từng nút */
+        .btn-fb {
+            border-color: #0084ff;
+            color: #0084ff;
+            box-shadow: 0 0 15px rgba(0, 132, 255, 0.2);
+        }
+        .btn-fb:hover {
+            background: #0084ff;
+            box-shadow: 0 0 25px rgba(0, 132, 255, 0.5);
+        }
+
+        .btn-dc {
+            border-color: #5865F2;
+            color: #5865F2;
+            box-shadow: 0 0 15px rgba(88, 101, 242, 0.2);
+        }
+        .btn-dc:hover {
+            background: #5865F2;
+            box-shadow: 0 0 25px rgba(88, 101, 242, 0.5);
+        }
+
+        .btn-zl {
+            border-color: #0068FF;
+            color: #0068FF;
+            box-shadow: 0 0 15px rgba(0, 104, 255, 0.2);
+        }
+        .btn-zl:hover {
+            background: #0068FF;
+            box-shadow: 0 0 25px rgba(0, 104, 255, 0.5);
         }
     </style>
 </head>
@@ -240,9 +277,19 @@
             </ul>
         </div>
 
-        <a href="#" class="contact-btn">
-            <i class="fab fa-facebook-messenger"></i> LIÊN HỆ NGAY
-        </a>
+        <div class="contact-buttons">
+            <a href="https://facebook.com/NaokiMC" class="contact-btn btn-fb" target="_blank">
+                <i class="fab fa-facebook"></i> FACEBOOK
+            </a>
+
+            <a href="https://discord.com/users/1438011858186534912" class="contact-btn btn-dc" target="_blank">
+                <i class="fab fa-discord"></i> DISCORD
+            </a>
+
+            <a href="https://zalo.me/0898481579" class="contact-btn btn-zl" target="_blank">
+                <i class="fas fa-comment-dots"></i> ZALO
+            </a>
+        </div>
 
     </div>
 </body>
